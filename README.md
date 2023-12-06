@@ -5,6 +5,8 @@ This code solves 2D topology optimization problems using a three-field density m
 
 Geometrically noninear modelling is achieved using the co-rotational method [2], and some formulations utilise the arc-length method suggested in [3]. The code utilises some of the framework from the top88 matlab code [4], and some ideas from papers exploring geometrically nonlinear topology optimization [5 - 9].
 
+No claim is made about the efficiency of this code, or its compactness (number of lines).
+
 # Running the code
 To run the code, you will also need a copy of the Matlab implmentation of MMA, which can be downloaded from: https://www.smoptit.se
 
