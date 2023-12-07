@@ -3,28 +3,29 @@ Matlab code for geometrically nonlinear topology optimization, including stabili
 
 This code solves 2D topology optimization problems using a three-field density method, including geometrically nonlinear effects and stability (buckling) constraints, and can be used to run the examples published in [1].
 
-Geometrically noninear modelling is achieved using the co-rotational method [2], and some formulations utilise the arc-length method suggested in [3]. The code utilises some of the framework from the top88 matlab code [4], and some ideas from papers exploring geometrically nonlinear topology optimization [5 - 9].
+Geometrically nonlinear modelling is achieved using the co-rotational method [2], and some formulations utilise the arc-length method suggested in [3]. The code utilises some of the framework from the top88 matlab code [4], and some ideas from papers exploring geometrically nonlinear topology optimization [5 - 9].
 
-No claim is made about the efficiency of this code, or its compactness (number of lines).
+# Disclaimer
+Although the code has been extensively tested, I cannot guarantee that it is free from errors. No claim is made about the efficiency of this code, or its compactness (number of lines). Some files use parfor for speedup, but the code should run without this, by replacing the 'parfor', with 'for'.
 
 # Running the code
-To run the code, you will also need a copy of the Matlab implmentation of MMA, which can be downloaded from: https://www.smoptit.se
+To run the code, you will also need a copy of the Matlab implementation of MMA, which can be downloaded from: https://www.smoptit.se
 
-The main file is: topnlstab.m. Note that various options are hard-coded and you need to mannually change this file to run different optimization problems.
+The main file is: topnlstab.m. Note that various options are hard-coded and you need to manually change this file to run different optimization problems.
 
-To change from linear to nonlinear end compliance - comment/uncomment lines 129-130.
+* To change from linear to nonlinear end compliance - comment/uncomment lines 129-130.
 
-To change the noninear stability constraint formulation - comment/uncomment lines 140-143.
+* To change the nonlinear stability constraint formulation - comment/uncomment lines 140-143.
 
 To run the various example in [1], use the following commands:
 
-Cantilever in section 5: topnlstab(0.025,160,40,0.4,3,3,1,1) & set objective to linear compliance (line 129).
+* Cantilever in section 5: ```topnlstab(0.025,160,40,0.4,3,3,1,1)``` & set objective to linear compliance (line 129).
 
-Snap-through in section 5: topnlstab(0.0125,240,80,0.1,3,2,2,1) & set objective to linear compliance (line 129).
+* Snap-through in section 5: ```topnlstab(0.0125,240,80,0.1,3,2,2,1)``` & set objective to linear compliance (line 129).
 
-Cantilever in section 6.1: topnlstab(0.025,160,40,0.4,3,3,1,2) & set objective to nonlinear end compliance (line 130), change load on line 43.
+* Cantilever in section 6.1: ```topnlstab(0.025,160,40,0.4,3,3,1,2)``` & set objective to nonlinear end compliance (line 130), change load on line 43.
 
-Column in section 6.2: topnlstab(0.00833333,240,120,0.35,3,4,3,2) & set objective to nonlinear end compliance (line 130).
+* Column in section 6.2: ```topnlstab(0.00833333,240,120,0.35,3,4,3,2)``` & set objective to nonlinear end compliance (line 130).
 
 There is also a script (cshape.m) that runs the c-shape benchmark problem [10], as seen in section 3.3 of [1].
 
